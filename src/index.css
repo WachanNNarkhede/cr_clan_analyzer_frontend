@@ -1,0 +1,82 @@
+
+@import "tailwindcss";
+
+@layer base {
+  body {
+    @apply bg-gray-50;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors;
+  }
+  
+  .btn-success {
+    @apply bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors;
+  }
+  
+  .table-header {
+    @apply bg-gray-100 text-gray-700 font-semibold py-3 px-4 text-left border-b-2 border-gray-200 cursor-pointer hover:bg-gray-200;
+  }
+  
+  .table-cell {
+    @apply py-3 px-4 border-b border-gray-200;
+  }
+  
+  .score-excellent {
+    @apply bg-green-100 font-semibold;
+  }
+  
+  .score-good {
+    @apply bg-blue-100;
+  }
+  
+  .score-average {
+    @apply bg-yellow-100;
+  }
+  
+  .score-poor {
+    @apply bg-red-100;
+  }
+}
+/* Better touch targets for mobile */
+@media (max-width: 640px) {
+  button, 
+  .btn,
+  [role="button"] {
+    min-height: 44px;  /* Apple's recommended touch target */
+    min-width: 44px;
+  }
+  
+  /* Increase tap target size for checkboxes */
+  input[type="checkbox"] {
+    transform: scale(1.2);
+    margin: 8px;
+  }
+  
+  /* Better readability on small screens */
+  table {
+    font-size: 0.75rem; /* 12px */
+  }
+  
+  /* Stack filter controls */
+  .filters-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  /* Full width buttons on mobile */
+  .mobile-full-width {
+    width: 100%;
+    margin: 4px 0;
+  }
+}
+
+/* Landscape mode optimization */
+@media (max-height: 500px) and (orientation: landscape) {
+  .min-h-screen {
+    min-height: auto;
+    padding: 10px;
+  }
+}
